@@ -1,0 +1,43 @@
+
+
+Cloud Systems - Distributed ML System
+Team - Nachiket Deo, Ramya Vempalla
+
+
+Table of Contents
+Project Motivation and Objective(s)………………………………………………………
+Task Assignments…………………………………………………………………………
+Deliverables and Timeline………………………………………………………………
+
+
+
+Project Motivation and Objective(s)
+
+The data generation is increasing at an exponential rate. This has led to an increase in usage of distributed storage systems as data can’t be stored on the single node.
+In this project we are planning to build a small distributed machine learning system and implement a few algorithms on it. We are trying to explore two broad approaches
+in distributed machine learning systems namely data parallel and model parallel. The work we are planning to do would lead to exploration of the challenges faced when
+running the machine learning algorithm in a distributed setting.
+
+Task Assignments
+1.Initially we are trying to set a basic distributed system with the Python Dask framework. The primitive and important step initially would be to set up the system with
+worker nodes and master nodes and establish the connection between them.
+2. We would also read papers on different algorithms that are to be run in a distributed setting. 
+
+Deliverables and Timeline
+
+25th October 2021 - Understanding basic concepts of distributed systems and reading the research work related to distributed machine learning algorithms.
+5th November - Completion of the distribution system setup.
+25th November - Implementation of the algorithms.
+6th December - Testing and code refactoring.
+12th December - Final presentation and report submission.
+
+
+
+References 
+[1].https://towardsdatascience.com/distributed-machine-learning-with-python-and-dask-2d6bae91a726 - Distributed Machine Learning in Python
+[2].https://cs.brown.edu/people/acrotty/pubs/Galakatos2017_ReferenceWorkEntry_DistributedMachineLearning.pdf - Distributed Machine Learning
+[3].https://www.cs.cmu.edu/~epxing/Class/10708-17/notes-17/10708-scribe-lecture22.pdf - Distributed ML challenges
+
+
+
+
