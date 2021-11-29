@@ -6,7 +6,6 @@ import numpy as np
 
 cluster = SLURMCluster(
     queue='generalsky',
-    project="ramya-nachiket-cloud-systems",
     cores=24,
     memory="50 GB"
 )
@@ -20,7 +19,7 @@ df = dd.read_csv(filename)
 
 #print(df)
 
-X, y = dask.persist(df['X'], df['y'])
+X, y = dask.persist(df['X'], df['Y'])
 client.rebalance([X, y])
 
 _, s, _ = np.linalg.svd(2 * X.T.dot(X))
