@@ -1,5 +1,7 @@
 import dask_ml.datasets
 import dask_ml.cluster
+import matplotlib as mlt
+mlt.use('Agg')
 import matplotlib.pyplot as plt
 
 X, y = dask_ml.datasets.make_blobs(n_samples=10000000,
@@ -15,3 +17,4 @@ km.fit(X)
 fig, ax = plt.subplots()
 ax.scatter(X[::10000, 0], X[::10000, 1], marker='.', c=km.labels_[::10000],
            cmap='viridis', alpha=0.25);
+fig.savefig('temp.png')
