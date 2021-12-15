@@ -22,7 +22,9 @@ y = X.dot(beta) + da.random.normal(0, 1, size=1000000, chunks=(100000,))
 
 #print(df_arr)
 
+
 X, y = dask.persist(X,y)
+
 client.rebalance([X, y])
 
 

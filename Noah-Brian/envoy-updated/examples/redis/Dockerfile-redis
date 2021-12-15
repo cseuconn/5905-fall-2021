@@ -1,0 +1,15 @@
+FROM redis
+
+RUN apt-get update \
+    && apt-get install --no-install-recommends -y curl \
+    && apt install python3-pip -y \
+    && apt-get autoremove -y \
+    && apt-get clean
+RUN pip3 install redis pyyaml requests==2.18.4 
+RUN mkdir /code
+ADD ./envoy.yaml /code
+ADD ./get-disk-usage.py /code
+RUN python3 /code/get-disk-usage.py
+# ADD ./start_service.sh /usr/local/bin/start_service.sh
+# RUN chmod u+x /usr/local/bin/start_service.sh
+# ENTRYPOINT ["/bin/sh", "/usr/local/bin/start_service.sh"]
