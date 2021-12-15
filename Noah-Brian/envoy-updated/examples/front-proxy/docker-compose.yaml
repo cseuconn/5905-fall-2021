@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+
+  front-envoy:
+    build:
+      context: .
+      dockerfile: Dockerfile-frontenvoy
+    networks:
+    - envoymesh
+    ports:
+    - "8080:8080"
+    - "8002:8002"
+
+  service1:
+    build:
+      context: .
+      dockerfile: Dockerfile-service
+    volumes:
+    - ./service-envoy.yaml:/etc/service-envoy.yaml
+    networks:
+    - envoymesh
+    environment:
+    - SERVICE_NAME=1
+
+networks:
+  envoymesh:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16
